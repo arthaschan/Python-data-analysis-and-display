@@ -26,9 +26,9 @@ import matplotlib.pyplot as plt
 # 第一张图
 plt.plot([0, 2, 4, 6, 8], [3, 1, 4, 5, 2])
 plt.ylabel("Grade")
-plt.axis([-1, 10, 0, 6])
+plt.axis([0, 10, 0, 6])
 # plt.savefig("test", dpi=600)
-plt.show()
+plt.show() # 显示图出来
 
 
 # 第二张图
@@ -38,17 +38,17 @@ plt.show()
 def f(t):
     return np.exp(-t) * np.cos(2*np.pi*t)
 
-a = np.arange(0, 5, 0.02)
+a = np.arange(0, 5, 0.02) # 0到5 步长0.02
 # 子图1
 plt.subplot(211)
 plt.plot(a, f(a))
 # 子图2
 plt.subplot(2, 1, 2)
-plt.plot(a, np.cos(2*np.pi*2*a), 'r--')
+plt.plot(a, np.cos(2*np.pi*2*a), 'r--') # r红色，-实线
 plt.show()
 
 
-# 第三张图
+# 第三张图 一个图里画4种线。
 a = np.arange(10)
 plt.plot(a,a*1.5,'go-', a,a*2.5,'rx', a,a*3.5,'*', a,a*4.5,'b-.')
 plt.show()
@@ -71,7 +71,7 @@ matplotlib.rcParams['font.family'] = 'Kaiti' #黑体
 matplotlib.rcParams['font.size'] = '10' #包括坐标轴字号均改变
 b = np.arange(1, 5, 0.02)
 plt.plot(b, np.cos(2*np.pi*b), 'r--')
-plt.xlabel('横轴：时间')
+plt.xlabel('横轴：时间') # 设定X Y轴的标签
 plt.ylabel('纵轴：振幅')
 plt.show()
 
@@ -109,7 +109,7 @@ plt.title(r'正弦波实例 $y=cos(2\pi x)$', fontproperties='SimHei',fontsize=2
 plt.annotate(r'$\mu=100$', xy=(2,1), xytext=(3,1.5),
              arrowprops=dict(facecolor='black', shrink=0.1, width=2))
 plt.axis([-1,6,-2,2])
-plt.grid(True)
+plt.grid(True)  # 网格线
 plt.show()
 
 

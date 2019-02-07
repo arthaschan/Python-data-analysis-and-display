@@ -16,9 +16,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
-rate_h, hstrain = wavfile.read(r'H1_Strain.wav', 'rb')
-rate_l, lstrain = wavfile.read(r'L1_Strain.wav', 'rb')
-reftime, ref_H1 = np.genfromtxt(r'wf_template.txt').transpose()
+rate_h, hstrain = wavfile.read(r'./data/H1_Strain.wav', 'rb')
+rate_l, lstrain = wavfile.read(r'./data/L1_Strain.wav', 'rb')
+reftime, ref_H1 = np.genfromtxt(r'./data/wf_template.txt').transpose()
 
 print(rate_h)
 print(hstrain)

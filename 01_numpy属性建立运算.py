@@ -27,42 +27,47 @@ print(a.size)  # ndarray对象元素的个数，相当于a.shape中n*m的值
 print(a.dtype) # ndarray对象的元素类型
 print(a.itemsize)  #ndarray对象中每个元素的大小，以字节为单位
 
+e = np.arange(0, 100, 10)  #[ 0 10 20 30 40 50 60 70 80 90]
+
+
+#print e
+
 # nparray的创建
 # (1)
 # x = np.array(list/tuple)
 # x = np.array(list/tuple,dtype=np.float32)
 # (2)
-print('\nnparray的创建')
+print(u'\nnparray的创建')
 print(np.arange(10))
-print(np.ones((3,6)))
-print(np.zeros((3,6),dtype=np.int32))
-print(np.eye(5))
+print(np.ones((3,6)))  # 全1  3行6列
+print(np.zeros((3,6),dtype=np.int32)) #全0,3行6列
+print(np.eye(5))  #斜角为1，其余全0的矩阵。
 print('')
 print(np.ones((2,3,4)))
-print(np.ones((2,3,4)).shape)
-print(np.full((2,3,4),9))
+print(np.ones((2,3,4)).shape) # shape 维度的描述
+print(np.full((2,3,4),9)) #
 # (3)
 print('')
-print(np.ones_like(a))
-print(np.zeros_like(a))
+print(np.ones_like(a))#生成与a同样维度的数组，元素全是1
+print(np.zeros_like(a))#生成与a同样维度的数组，元素全是0
 print(np.full_like(a,9)) #生成与a同样维度的数组，元素全是9
 # (4)
 print('')
-print(np.linspace(0,10,5)) # 包括10
+print(np.linspace(0,10,5)) # 包括10  一维，从0到10,5个数
 print(np.linspace(0,10,5,endpoint=False)) # 不包括10
-print(np.concatenate((np.arange(10),np.linspace(0,10,5)))) #合并两个数组
+print(np.concatenate((np.arange(10),np.linspace(0,10,5)))) #合并两个数组 concatenate 合并
 
 
 # nparray的维度变换
-print('\nnparray的维度变换')
+print(u'\nnparray的维度变换')
 b = np.ones((2,3,4),dtype=np.int32)
 print(b.reshape((3,8))) #reshape不改变原数组
 print(b.resize((3,8))) #resize改变原数组
-print(b.flatten()) # 数组降维成1维
+print(b.flatten()) # 数组降维成1维   flatten  展平，平铺
 
 
 # nparray的类型变换
-print('\nnparray的类型度变换')
+print(u'\nnparray的类型度变换')
 c= np.ones((2,3,4),dtype=np.int)
 print(c)
 new_c = c.astype(np.float) # 一定会生成一个数组，可以通过它对数组进行拷贝
@@ -70,15 +75,15 @@ print(new_c)
 
 
 # nparray数组向列表的转换
-print('\nnparray数组向列表的转换')
+print(u'\nnparray数组向列表的转换')
 d = np.full((2,3,4),25,dtype=np.int32)
 print(d)
 print(d.tolist())
 
 # nparray数组的操作
-print('\nnparray数组的操作')
+print(u'\nnparray数组的操作')
 e = np.linspace(1,10,10)
-print(e[1:4:1]) # 起始编号：终止编号（不含）：步长
+print(e[1:4:1]) # 起始编号：终止编号（不含）：步长  0是第一个元素，1是第2个元素
 
 print('')
 f = np.arange(24).reshape((2,3,4))
@@ -93,7 +98,7 @@ print(f[:,:,::2])
 
 # nparray数组的运算
 # 一元函数(均返回新数组)
-print('\nnparray数组的运算')
+print(u'\nnparray数组的运算')
 g = np.arange(1,6) / 5
 print(np.abs(g))
 print(np.sqrt(g))

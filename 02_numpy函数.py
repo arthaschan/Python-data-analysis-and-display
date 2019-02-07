@@ -50,7 +50,10 @@ print(np.random.normal(10, 5, (3, 4)))
 # average(a, axis=None, weight=None)
 # std(a, axis=None)
 # std(a, axis=None) # 给定轴计算方差
-A = np.arange(15).reshape(3,5)
+
+print(u"统计函数")
+A = np.arange(15).reshape(3,5)  #np.arange(15) 得到的是 0 1  ** 14的一维 数组，15个元素，经过reshape后，就调整为 3*5的矩阵
+print(A)
 print(np.sum(A))
 print(np.mean(A, axis=1)) # 最外层维度为3代表axis=0，第二层维度为5代表axis=1，表示将第二层5个元素求平均值
 print(np.mean(A, axis=0)) #在第1维度做运算
